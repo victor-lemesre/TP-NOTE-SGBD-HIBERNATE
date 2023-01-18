@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,11 +15,11 @@ import javax.persistence.OneToOne;
 public class commercial  extends employe{
 	
 	@OneToMany(mappedBy = "commercial", cascade = CascadeType.ALL)
-	private List<contrat> litscontrats;
+	private List<contrat> listecontrats;
 
 
 	commercial(String _nom){
 		super(_nom);
-		this.litscontrats = new List<contrat>();
+		this.listecontrats = new ArrayList<contrat>();
 	}
 }

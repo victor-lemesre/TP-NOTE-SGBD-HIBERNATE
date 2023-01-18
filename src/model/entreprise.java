@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -15,9 +18,13 @@ public class entreprise extends client {
 	@Column(name="nom_societe")
 	private String nomSociete;
 
+	@OneToMany(mappedBy = "entreprise", cascade = CascadeType.ALL)
+	private List<telephone> liste_telephone;
+
 	public entreprise(String _numeroTVA, String _nom, adresse _adresse){
 		super(_adresse);
 		this.nomSociete = _nom;
 		this.numeroTVA = _numeroTVA;
+		this.liste_telephone = new ArrayList<telephone>();
 	}
 }

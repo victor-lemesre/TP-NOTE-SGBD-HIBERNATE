@@ -15,8 +15,12 @@ public class telephone {
 	@Column(name = "num_telephone")
 	private String numTelephone;
 
-	public telephone(String _telephone){
+	@ManyToOne(cascade = CascadeType.ALL)	
+	private entreprise entreprise;
+
+	public telephone(String _telephone, entreprise _entreprise){
 		this.numTelephone = _telephone;
+		this.entreprise = _entreprise;
 	}
 
 }

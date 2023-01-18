@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,10 +14,17 @@ public abstract class client {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+
+
 	private adresse adresse_client;
+
+	@OneToMany(mappedBy = "docteur", cascade = CascadeType.ALL)
+	private List<contrat> ListeContrats;
+
 
     public client(adresse _adresse){
 		this.adresse_client = _adresse;
+		this.ListeContrats = new ArrayList<contrat>();
 	}
 
 }

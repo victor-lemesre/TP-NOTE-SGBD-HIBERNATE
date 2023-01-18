@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +19,15 @@ public class livraison {
 	@Column(name = "date-heure_livraison")
 	private String DateHeureLivraison;
 
-	public livraison(String _DateLivraison){
+	@ManyToOne(cascade = CascadeType.ALL)	
+	private contrat contrat;
+
+	@OneToMany(mappedBy = "livraison", cascade = CascadeType.ALL)
+	private List<meuble> liste_meubles;
+
+	public livraison(String _DateLivraison, contrat _contrat){
 		this.DateHeureLivraison = _DateLivraison;
+		this.contrat = _contrat;
+		this.liste_meubles = new ArrayList<meuble>();
 	}
 }

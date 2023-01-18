@@ -21,12 +21,20 @@ public class meuble {
 	@Column(name="est_reserve")
 	private boolean estReserve;
 
-	public meuble(float _prix, float _longueur, float _largeur, float _hauteur, String _fournisseur){
+	@ManyToOne(cascade = CascadeType.ALL)	
+	private livraison livraison;
+
+	@ManyToOne(cascade = CascadeType.ALL)	
+	private contrat contrat;
+
+	public meuble(float _prix, float _longueur, float _largeur, float _hauteur, String _fournisseur, contrat _contrat, livraison _livraison){
 		this.prix = _prix;
 		this.longueur = _longueur;
 		this.largeur = _largeur;
 		this.hauteur = _hauteur;
 		this.fournisseur = _fournisseur;
 		this.estReserve = false;
+		this.contrat = _contrat;
+		this.livraison = _livraison; 
 	}
 }
