@@ -18,7 +18,7 @@ public class commercial  extends employe{
 	private List<contrat> listecontrats;
 
 
-	commercial(String _nom){
+	public commercial(String _nom){
 		super(_nom);
 		this.listecontrats = new ArrayList<contrat>();
 	}

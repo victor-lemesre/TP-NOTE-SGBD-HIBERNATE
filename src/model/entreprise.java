@@ -21,6 +21,10 @@ public class entreprise extends client {
 	@OneToMany(mappedBy = "entreprise", cascade = CascadeType.ALL)
 	private List<telephone> liste_telephone;
 
+	public void addTelephone(telephone _telephone){
+		liste_telephone.add(_telephone);
+	}
+
 	public entreprise(String _numeroTVA, String _nom, adresse _adresse){
 		super(_adresse);
 		this.nomSociete = _nom;
