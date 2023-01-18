@@ -14,6 +14,11 @@ import javax.persistence.OneToOne;
 public class commercial  extends employe{
 	
 	@OneToMany(mappedBy = "commercial", cascade = CascadeType.ALL)
-	private List<contrat> lshospitalisation;
+	private List<contrat> litscontrats;
 
+
+	commercial(String _nom){
+		super(_nom);
+		this.litscontrats = new List<contrat>();
+	}
 }

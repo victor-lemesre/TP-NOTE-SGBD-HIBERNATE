@@ -8,4 +8,7 @@ import javax.persistence.InheritanceType;
 @Inheritance(strategy=InheritanceType.JOINED)
 public class employeAdministratif extends employe{
 
+    employeAdministratif(String _nom){
+       super(_nom);
+    }
 }

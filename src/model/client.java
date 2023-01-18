@@ -6,11 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class client {
+public abstract class client {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private String adresse;
+	private adresse adresse_client;
+
+    public client(adresse _adresse){
+		this.adresse_client = _adresse;
+	}
 
 }

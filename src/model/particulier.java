@@ -18,4 +18,11 @@ public class particulier  extends client {
 	private String prenom;
 	private String telephone;
 
+	public particulier(adresse _adresse, String _nom, String _prenom, String _telephone){
+		super(_adresse);
+		this.nom = _nom;
+		this.prenom = _prenom;
+		this.telephone = _telephone;
+	}
+
 }

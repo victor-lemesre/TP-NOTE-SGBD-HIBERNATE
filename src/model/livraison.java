@@ -16,4 +16,7 @@ public class livraison {
 	@Column(name = "date-heure_livraison")
 	private String DateHeureLivraison;
 
+	public livraison(String _DateLivraison){
+		this.DateHeureLivraison = _DateLivraison;
+	}
 }

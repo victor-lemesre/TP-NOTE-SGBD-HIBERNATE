@@ -6,11 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class employe {
+public abstract class employe {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String nom;
 
+	public employe(String _nom){
+		this.nom = _nom;
+	}
 }

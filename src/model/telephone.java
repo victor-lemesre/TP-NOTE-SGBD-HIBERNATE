@@ -15,4 +15,8 @@ public class telephone {
 	@Column(name = "num_telephone")
 	private String numTelephone;
 
+	public telephone(String _telephone){
+		this.numTelephone = _telephone;
+	}
+
 }

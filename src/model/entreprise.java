@@ -14,4 +14,10 @@ public class entreprise extends client {
 	
 	@Column(name="nom_societe")
 	private String nomSociete;
+
+	public entreprise(String _numeroTVA, String _nom, adresse _adresse){
+		super(_adresse);
+		this.nomSociete = _nom;
+		this.numeroTVA = _numeroTVA;
+	}
 }

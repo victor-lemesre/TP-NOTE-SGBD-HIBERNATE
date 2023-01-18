@@ -1,5 +1,4 @@
 package model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +15,11 @@ public class contrat {
 	private String DateConclusion;
 	
 	@Column(name = "adresse_livraison")
-	private String AdresseLivraison;
+	private adresse AdresseLivraison;
+
+	public contrat(String _DateConclusion, adresse _adresse_livraison){
+		this.DateConclusion = _DateConclusion;
+		this.AdresseLivraison = _adresse_livraison;
+	}
 
 }
