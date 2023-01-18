@@ -14,16 +14,6 @@ public class adresse {
 	private String CodePostal;
 	private String ville;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private Personne p;
-
-	public Personne getP(){
-		return p;
-	}
-	
-	public void setP(Personne p){
-		this.p = p;
-	}
 	
 	public int getNum() {
 		return num;
