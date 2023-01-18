@@ -14,6 +14,23 @@ public class adresse {
 	private String CodePostal;
 	private String ville;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private client client;
+
+    public adresse(int _numero,String _rue, String _code, String _ville ){
+        this.num = _numero;
+        this.rue = _rue;
+        this.CodePostal = _code;
+        this.ville = _ville;
+    }
+
+	public client getP(){
+		return client;
+	}
+	
+	public void setP(client p){
+		this.client = p;
+	}
 	
 	public int getNum() {
 		return num;
