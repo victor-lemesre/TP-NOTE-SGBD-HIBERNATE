@@ -12,4 +12,6 @@ public class client {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String adresse;
+
+	//test push
 }
