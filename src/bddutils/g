@@ -1,0 +1,45 @@
+stmt = c.createStatement();
+			// ajout des clients 
+			stmt.execute("INSERT INTO client_parent (Adresse) VALUES ('45 allee ferdinand de lesseps')");
+			stmt.execute("INSERT INTO client_parent (Adresse) VALUES ('32 rue charles richet')");
+			
+			//spécification  du client 1 en particulier
+			stmt.execute("INSERT INTO particulier (IdClient,nom,prenom,telephone) VALUES (1,'LEMESRE' , 'Victor' ,'0606662415')");
+
+			//spécification  du client 2 en entreprise 
+			stmt.execute("INSERT INTO entreprise (IdClient,numeroTVA,nomSociete) VALUES (2,'FR 32 123456789' , 'polytech')");
+			
+			//ajout des telephone de l'entreprise
+			
+			stmt.execute("INSERT INTO telephone(IdClient,numTelephone) VALUES (2,'0666999013')");
+			stmt.execute("INSERT INTO telephone(IdClient,numTelephone) VALUES (2,'0684759612')");
+			stmt.execute("INSERT INTO telephone(IdClient,numTelephone) VALUES (2,'0619283264')");
+			
+			//ajout des employes
+			
+			stmt.execute("INSERT INTO employe (prenom,domaine) VALUES ('Paul','commercial')");
+			stmt.execute("INSERT INTO employe (prenom,domaine) VALUES ('Theo','fabriquant')");
+			stmt.execute("INSERT INTO employe (prenom,domaine) VALUES ('Martin','employe administratif')");
+			
+			//ajout des contrats
+			stmt.execute("INSERT INTO contrat (dateDeConclusion,adresseDeLivraison,IdClient,IdEmploye) VALUES ('2022-9-9','45 allee ferdinand de lesseps',1,1)");
+			stmt.execute("INSERT INTO contrat (dateDeConclusion,adresseDeLivraison,IdClient,IdEmploye) VALUES ('2022-10-10','32 rue charles richet',2,2)");
+			stmt.execute("INSERT INTO contrat (dateDeConclusion,adresseDeLivraison,IdClient,IdEmploye) VALUES ('2022-11-11','32 rue charles richet',2,3)");
+			
+			//ajout des livraison
+			stmt.execute("INSERT INTO livraison (dateHeureLivraison,IdContrat) VALUES ('2022-10-10 10:10:10',1)");
+			stmt.execute("INSERT INTO livraison (dateHeureLivraison,IdContrat) VALUES ('2022-11-11 11:11:11',2)");
+			stmt.execute("INSERT INTO livraison (dateHeureLivraison,IdContrat) VALUES ('2022-12-12 12:12:12',3)");
+			stmt.execute("INSERT INTO livraison (dateHeureLivraison,IdContrat) VALUES ('2022-12-12 12:12:12',3)");
+			
+			//ajout des meubles
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('armoire',109.99,'leroy merlin',100.0,100.0,15,TRUE,1,1)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('etagere',109.99,'bricoman',100.0,100.0,200.0,TRUE,1,1)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('lit',109.99,'burolia',100.0,100.0,200.0,TRUE,2,2)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('table',109.99,'monsieur bureau',100.0,100.0,200.0,TRUE,2,2)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('table de chevet',109.99,'leroy merlin',100.0,100.0,200.0,TRUE,3,3)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('chaise',109.99,'bricoman',100.0,100.0,200.0,TRUE,3,3)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('armoire',109.99,'burolia',100.0,100.0,200.0,TRUE,4,3)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve,IdLivraison,IdContrat) VALUES ('armoire',109.99,'monsieur bureau',100.0,100.0,200.0,TRUE,4,3)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve) VALUES ('armoire',109.99,'leroy merlin',100.0,100.0,200.0,FALSE)");
+			stmt.execute("INSERT INTO meuble (typeMeuble,prix,fournisseur,longueur,largeur,hauteur,estReserve) VALUES ('armoire',109.99,'bricoman',100.0,100.0,200.0,FALSE)");

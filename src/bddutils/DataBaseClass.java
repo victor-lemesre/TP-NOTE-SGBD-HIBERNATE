@@ -15,8 +15,8 @@ public class DataBaseClass{
         adresse adresseEntreprise = new adresse(32, "rue charles richet", "37200", "Tours")
         entreprise client2 = new entreprise("FR 32 123456789", "polytech", adresseEntreprise)
         adresseEntreprise.setP(client2);
-        telephone telephone_entreprise1 = new telephone("0651515151", client2)
-        telephone telephone_entreprise2 = new telephone("0616161616", client2)
+        telephone telephone_entreprise1 = new telephone("0651515151", client2);
+        telephone telephone_entreprise2 = new telephone("0616161616", client2);
 
         client2.addTelephone(telephone_entreprise1);
         client2.addTelephone(telephone_entreprise2);
